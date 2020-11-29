@@ -1,0 +1,41 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <title>Add student</title>
+        <style>
+            body{
+              background-color: #E1F8DC;
+            }
+            input {
+                background-color: #CAF1DE;
+                border-color: #ACDDDE;
+            }
+            .center-screen {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              min-height: 90vh;
+            }
+            a {
+              padding: 10px;
+              border-radius: 10px;
+              background-color: #ACDDDE;
+              text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="/" id="redirect" style="float: right;"> Return to Home</a>
+        <form class="center-screen" action="/student" method="POST" id="student">
+            <label>Student</label>
+            <input type="text" name="student" value="" placeholder="John Smith" required ><br>
+            <label>Subject</label>
+            <input type="text" name="subject" value="" placeholder="Math" required><br>
+            <label>Grade</label>
+            <input type="text" name="grade" value="" placeholder="94.5" required><br>
+            <input type="submit" value="Send">
+        </form>
+    </body>
+</html>

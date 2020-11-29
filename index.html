@@ -1,0 +1,82 @@
+<DOCTYPE html>
+<html>
+<head>
+    <title>Web Server</title>
+    <style>
+        body{
+            background-color: #E1F8DC;
+        }
+        button {
+          background-color: #CAF1DE; 
+          color: #728686; 
+          border: 2px solid #ACDDDE;
+          padding: 16px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          transition-duration: 0.4s;
+          cursor: pointer;
+          width: 200px;
+          height: 80px;
+        }
+        button:hover {
+          background-color: #008CBA;
+          color: white;
+        }
+        .center {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          min-height: 90vh;
+        }
+        .sucess {
+            background-color: greenyellow;
+        }
+        h1 {
+            font-size: 60px;
+            color: #7d9899;
+        }
+
+    </style>
+ <script type="text/javascript">
+    beforeSubmit = function(opt){
+        href = '/';
+        if(opt === 1) {
+            href = '/student';
+        } else if(opt === 2) {
+            href = '/students-average';
+        } else if(opt === 3) {
+            href = '/subjects-average';
+        } else if(opt === 4) {
+            href = '/general-average';
+        }
+        document.getElementById('redirect').href = href;
+        document.getElementById('redirect').click();
+    }
+</script>
+</head>
+<body>
+    <div class="center">
+        <h1>ACT 9: WEB SERVER</h1>
+        <button type="button" onclick="beforeSubmit(1)">
+            Add Student Grade By Subject
+        </button>
+        <button type="button" onclick="beforeSubmit(2)">
+            Get Students Average
+        </button>
+        <button type="button" onclick="beforeSubmit(3)">
+            Subject Average
+        </button>
+        <button type="button" onclick="beforeSubmit(4)">
+            General Average
+        </button>
+    </div>
+
+    <a href="/" id="redirect" style="display: none;"> </a>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<DOCTYPE html>
+    <html>
+    <head>
+        <title>Subject Average</title>
+        <style>
+            table, th, td {
+              border: 1px solid black;
+              border-collapse: collapse;
+            }
+            body{
+              background-color: #E1F8DC;
+            }
+            a {
+              padding: 10px;
+              border-radius: 10px;
+              background-color: #ACDDDE;
+              text-decoration: none;
+            }
+            table {
+              margin-left: auto;
+              margin-right: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="/" id="redirect" style="float: right;"> Return to Home</a>
+        <table>
+            <tr>
+                <th style="width: 400px;">Subject</th>
+                <th style="width: 100px;">Average</th>
+            </tr>
+            %s
+        </table>
+    </body>
+    <script>
+        var allTableCells = document.getElementsByTagName("td");
+        for(var i = 0, max = allTableCells.length; i < max; i++) {
+           var node = allTableCells[i];
+           var currentText = node.childNodes[0].nodeValue;
+           if (!isNaN(currentText)) {
+               node.style.backgroundColor = currentText >= 60? "38FA38": "FF4D5F";
+           }
+        }
+    </script>
+    </html>
